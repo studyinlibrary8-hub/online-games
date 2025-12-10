@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Игра 1</title>
+</head>
+<body>
+    <h1>Это Игра 1</h1>
+    <p>Сюда можно вставить JavaScript игру.</p>
+
+    <canvas id="game" width="400" height="400" style="background:#000"></canvas>
+
+    <script>
+        // простой пример "игры"
+        const c = document.getElementById("game");
+        const ctx = c.getContext("2d");
+        let x = 50;
+
+        function loop() {
+            ctx.clearRect(0,0,400,400);
+            ctx.fillStyle = "lime";
+            ctx.fillRect(x,200,50,50);
+            x++;
+            if (x > 400) x = -50;
+            requestAnimationFrame(loop);
+        }
+        loop();
+    </script>
+</body>
+</html>
