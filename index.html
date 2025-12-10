@@ -1,18 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Мои онлайн игры</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Games Hub</title>
+
     <style>
-        body { font-family: Arial; background: #111; color: #fff; text-align:center;}
-        a { display:block; padding:10px; margin:10px; background:#222; color:#0f0; text-decoration:none; border-radius:8px;}
-        a:hover { background:#333; }
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+            color: #ffffff;
+        }
+
+        header {
+            background: #111;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px #0008;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+            letter-spacing: 1px;
+            color: #00ffea;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .games {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #151515;
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 15px #0009;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 25px #00ffee88;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #00ffee;
+            font-size: 22px;
+        }
+
+        .card p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 18px;
+            background: #00ffee;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .card a:hover {
+            background: #00bbaa;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            background: #0f0f0f;
+            box-shadow: 0 -2px 10px #0008;
+        }
+
+        footer span {
+            color: #00ffee;
+        }
     </style>
 </head>
-<body>
-    <h1>Онлайн Игры</h1>
 
-    <a href="game1/index.html">Игра 1</a>
-    <a href="game2/index.html">Игра 2</a>
+<body>
+
+<header>
+    <h1>Online Games Hub</h1>
+</header>
+
+<div class="container">
+    <div class="games">
+
+        <div class="card">
+            <h3>Runner Game</h3>
+            <p>A simple running game with smooth animation.</p>
+            <a href="game1/index.html">Play</a>
+        </div>
+
+        <div class="card">
+            <h3>Space Shooter</h3>
+            <p>Destroy enemy ships in outer space.</p>
+            <a href="game2/index.html">Play</a>
+        </div>
+
+        <div class="card">
+            <h3>Puzzle Logic</h3>
+            <p>Train your brain with logic puzzles.</p>
+            <a href="game3/index.html">Play</a>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    Version: <span>0.0.0.1</span>
+</footer>
+
 </body>
 </html>
