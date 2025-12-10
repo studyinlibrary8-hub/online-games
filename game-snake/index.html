@@ -1,30 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Игра 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Это Игра 1</h1>
-    <p>Сюда можно вставить JavaScript игру.</p>
 
-    <canvas id="game" width="400" height="400" style="background:#000"></canvas>
+<h1>Snake Game</h1>
 
-    <script>
-        // простой пример "игры"
-        const c = document.getElementById("game");
-        const ctx = c.getContext("2d");
-        let x = 50;
+<canvas id="gameCanvas" width="400" height="400"></canvas>
 
-        function loop() {
-            ctx.clearRect(0,0,400,400);
-            ctx.fillStyle = "lime";
-            ctx.fillRect(x,200,50,50);
-            x++;
-            if (x > 400) x = -50;
-            requestAnimationFrame(loop);
-        }
-        loop();
-    </script>
+<p class="info">Use W A S D or Arrow Keys to move</p>
+
+<script src="script.js"></script>
 </body>
 </html>
