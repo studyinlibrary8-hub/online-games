@@ -22,3 +22,32 @@ h1 {
     color: #bbb;
     font-size: 14px;
 }
+
+/* Back button */
+.back-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #00ffee;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    background: #00bbaa;
+}
+
+/* Version footer */
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #bbb;
+}
+footer span {
+    color: #00ffee;
+}
