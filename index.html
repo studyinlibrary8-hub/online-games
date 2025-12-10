@@ -57,6 +57,7 @@
             margin-top: 0;
             color: #00ffee;
             font-size: 22px;
+            text-transform: capitalize;
         }
 
         .card p {
@@ -103,32 +104,49 @@
 </header>
 
 <div class="container">
-    <div class="games">
-
-        <div class="card">
-            <h3>Runner Game</h3>
-            <p>A simple running game with smooth animation.</p>
-            <a href="game1/index.html">Play</a>
-        </div>
-
-        <div class="card">
-            <h3>Space Shooter</h3>
-            <p>Destroy enemy ships in outer space.</p>
-            <a href="game2/index.html">Play</a>
-        </div>
-
-        <div class="card">
-            <h3>Puzzle Logic</h3>
-            <p>Train your brain with logic puzzles.</p>
-            <a href="game3/index.html">Play</a>
-        </div>
-
-    </div>
+    <div class="games" id="games"></div>
 </div>
 
 <footer>
-    Version: <span>0.0.0.1</span>
+    Version: <span>0.0.0.2</span>
 </footer>
+
+<script>
+    const username = "studyinlibrary8-hub";    // ← поменяй на свой GitHub
+    const repo = "online-games";        // ← поменяй на свой репозиторий
+
+    const apiURL = `https://api.github.com/repos/${username}/${repo}/contents/`;
+
+    async function loadGames() {
+        try {
+            const response = await fetch(apiURL);
+            const files = await response.json();
+
+            const gamesDiv = document.getElementById("games");
+
+            files.forEach(item => {
+                if (item.type === "dir" && item.name.toLowerCase().includes("game")) {
+
+                    const card = document.createElement("div");
+                    card.className = "card";
+
+                    card.innerHTML = `
+                        <h3>${item.name}</h3>
+                        <p>A game folder detected automatically.</p>
+                        <a href="${item.name}/index.html">Play</a>
+                    `;
+
+                    gamesDiv.appendChild(card);
+                }
+            });
+
+        } catch (e) {
+            console.error("Error loading games:", e);
+        }
+    }
+
+    loadGames();
+</script>
 
 </body>
 </html>
